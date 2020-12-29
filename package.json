@@ -25,5 +25,8 @@
     "mongoose": "^5.11.9",
     "nodemon": "^2.0.6",
     "uniquid": "^1.1.4"
+  },
+  "engines": {
+  "node": "10.19.0"
   }
 }
