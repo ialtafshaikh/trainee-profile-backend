@@ -5,33 +5,29 @@ const uniquid = require("uniquid");
 const employeeSchema = new mongoose.Schema({
   employeeId: {
     type: String,
-    default: uniquid(),
+    default: uniquid() + Date.now(),
     unique: true,
   },
+
   firstName: {
     type: String,
     required: [true, "Please enter first name"],
-   
   },
   lastName: {
     type: String,
     required: [true, "Please enter last name"],
-    
   },
   company: {
     type: String,
     required: [true, "Please enter your company. "],
-    
   },
   email: {
     type: String,
     required: [true, "Please enter your email. "],
-    
   },
   contact: {
     type: String,
-    default:"",
-    
+    default: "",
   },
   imageUrl: {
     type: String,
@@ -40,7 +36,7 @@ const employeeSchema = new mongoose.Schema({
   skills: [],
   altDescription: {
     type: String,
-   default:"alt-image-description",
+    default: "alt-image-description",
   },
   hobbies: [],
   socialLinks: [],
