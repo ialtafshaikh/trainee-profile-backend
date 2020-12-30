@@ -12,7 +12,7 @@ const addEmployees = (req, res, next) => {
 		})
 		.catch((err) => {
 			return sendErrorMessage(
-				new AppError(400, "unsuccessful", "request body is inavlid"),
+				new AppError(400, "unsuccessful", err),
 				req,
 				res
 			);
