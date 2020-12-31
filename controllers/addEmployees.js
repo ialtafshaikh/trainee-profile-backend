@@ -6,7 +6,27 @@ const sendErrorMessage = require("../helpers/sendError");
 const sendResponse = require("../helpers/sendResponse");
 
 const addEmployees = (req, res, next) => {
-  let newEmployee = req.body;
+  formObj.append("hobbies", form.hobbies.value.split(","));
+  formObj.append("gitHub", form.gitHub.value);
+  formObj.append("linkedIn", form.linkedIn.value);
+  formObj.append("website", form.website.value);
+
+  let newEmployee;
+  newEmployee.firstName = req.body.firstName;
+  newEmployee.lastName = req.body.lastName;
+  newEmployee.company = req.body.company;
+  newEmployee.email = req.body.email;
+  newEmployee.contact = req.body.contact;
+  newEmployee.skills = req.body.skills;
+  newEmployee.altDescription = req.body.altDescription;
+  newEmployee.hobbies = req.body.hobbies;
+  newEmployee.socialLinks = [
+    {
+      gitHub: req.body.gitHub,
+      linkedIn: req.body.linkedIn,
+      website: req.body.website,
+    },
+  ];
   newEmployee.imageUrl = req.image;
 
   Employee.create(newEmployee)
