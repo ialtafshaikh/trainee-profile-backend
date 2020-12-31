@@ -19,14 +19,18 @@
   },
   "homepage": "https://github.com/ialtafshaikh/trainee-profile-backend#readme",
   "dependencies": {
+    "cloudinary": "^1.23.0",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "datauri": "^3.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.9",
+    "multer": "^1.4.2",
     "nodemon": "^2.0.6",
     "uniquid": "^1.1.4"
   },
   "engines": {
-  "node": "10.19.0"
+    "node": "10.19.0"
   }
 }

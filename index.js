@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 var cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const router = require("./routes/employeeRoute");
 
@@ -27,6 +28,7 @@ mongoose.connect(
 const app = express();
 
 app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 app.use("/employees/", router);
 
