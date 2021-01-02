@@ -6,20 +6,21 @@ const sendErrorMessage = require("../helpers/sendError");
 const sendResponse = require("../helpers/sendResponse");
 
 const addEmployees = (req, res, next) => {
-  let newEmployee;
-  newEmployee.firstName = req.body.firstName;
-  newEmployee.lastName = req.body.lastName;
-  newEmployee.company = req.body.company;
-  newEmployee.email = req.body.email;
-  newEmployee.contact = req.body.contact;
-  newEmployee.skills = req.body.skills;
-  newEmployee.altDescription = req.body.altDescription;
-  newEmployee.hobbies = req.body.hobbies;
+  const data = JSON.parse(JSON.stringify(req.body));
+  let newEmployee = {};
+  newEmployee.lastName = data.lastName;
+  newEmployee.firstName = data.firstName;
+  newEmployee.company = data.company;
+  newEmployee.email = data.email;
+  newEmployee.contact = data.contact;
+  newEmployee.skills = data.skills.split(",");
+  newEmployee.altDescription = data.altDescription;
+  newEmployee.hobbies = data.hobbies.split(",");
   newEmployee.socialLinks = [
     {
-      gitHub: req.body.gitHub,
-      linkedIn: req.body.linkedIn,
-      website: req.body.website,
+      gitHub: data.gitHub,
+      linkedIn: data.linkedIn,
+      website: data.website,
     },
   ];
   newEmployee.imageUrl = req.image;
