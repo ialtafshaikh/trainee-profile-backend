@@ -6,11 +6,6 @@ const sendErrorMessage = require("../helpers/sendError");
 const sendResponse = require("../helpers/sendResponse");
 
 const addEmployees = (req, res, next) => {
-  formObj.append("hobbies", form.hobbies.value.split(","));
-  formObj.append("gitHub", form.gitHub.value);
-  formObj.append("linkedIn", form.linkedIn.value);
-  formObj.append("website", form.website.value);
-
   let newEmployee;
   newEmployee.firstName = req.body.firstName;
   newEmployee.lastName = req.body.lastName;
