@@ -1,8 +1,8 @@
 const express = require("express");
 
-const { getAllemployees } = require("../controllers/employeeController");
+const { getAllEmployees } = require("../controllers/getAllEmployees");
 const { addEmployees } = require("../controllers/addEmployees");
-const { getEmployeebyId } = require("../controllers/getEmployeebyId");
+const { getEmployeeById } = require("../controllers/getEmployeeById");
 
 //middlewares
 const { uploadImage } = require("../middlewares/imageMiddlewares");
@@ -12,10 +12,10 @@ const { cloudinaryConfig } = require("../config/cloudinaryConfig");
 
 const router = express.Router();
 
-router.route("/").get(getAllemployees);
+router.route("/").get(getAllEmployees);
 router
-  .route("/addEmployee")
-  .post(cloudinaryConfig, multerUploads, uploadImage, addEmployees);
-router.route("/:empId").get(getEmployeebyId);
+	.route("/addEmployee")
+	.post(cloudinaryConfig, multerUploads, uploadImage, addEmployees);
+router.route("/:empId").get(getEmployeeById);
 
 module.exports = router;
