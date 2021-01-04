@@ -1,4 +1,4 @@
-# employee-profile Backend
+# Trainee Profile Backend
 
 Employees profile backend is built using express server, mongoDB atlas is used to store the data and the backend is hosted on Heroku.
 
